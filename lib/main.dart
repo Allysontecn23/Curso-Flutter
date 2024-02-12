@@ -74,7 +74,7 @@ class MyApp extends StatelessWidget {
               ),
               Container(
                 color: Colors.amber,
-                height: 3000,
+                height: 30,
                 width: 300,
                 child: const Text(
                   "Diamante Amarelo",
@@ -96,3 +96,39 @@ class MyApp extends StatelessWidget {
         ));
   }
 }
+
+
+// Container(
+//  color: Colors.black,
+//  child: Column(
+//    mainAxisAlignment: MainAxisAlignment.spaceAround,
+//    crossAxisAlignment: CrossAxisAlignment.center,
+//    children: [
+//      Row(
+//        mainAxisAlignment: MainAxisAlignment.spaceAround,
+//        crossAxisAlignment: CrossAxisAlignment.center,
+//        children: [
+//          Container(
+//            color: Colors.red,
+//            width: 100,
+//            height: 100,
+//          ),
+//          Container(
+//            color: Colors.orange,
+//            width: 100,
+//            height: 100,
+//          ),
+//          Container(
+//            color: Colors.yellow,
+//            width: 100,
+//            height: 100,
+//          ),
+//        ],
+//      ),
+//      Row(...),
+//      Row(...),
+//      Row(...),
+//    ],
+//  ),
+// );
+
