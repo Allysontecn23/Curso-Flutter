@@ -12,52 +12,50 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Center(
-            child: Text("Flutter: Meus primeiros passos"),
-          ),
+          title: const Text("Tarefas"),
         ),
         body: Container(
-          color: Colors.black,
+          child: Stack(
+            children: [
+              Container(
+                height: 140,
+                color: Colors.blue,
+              ),
+              Container(
+                height: 100,
+                color: Colors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      color: Colors.black26,
+                      height: 100,
+                      width: 70,
+                    ),
+                    Text("Aprender Flutter"),
+                    ElevatedButton(
+                      onPressed: () {}, 
+                      child: Icon(Icons.arrow_drop_up),),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {}),
+          onPressed: () {},
+        ),
       ),
     );
   }
 }
 
 
-// Container(
-//  color: Colors.black,
-//  child: Column(
-//    mainAxisAlignment: MainAxisAlignment.spaceAround,
-//    crossAxisAlignment: CrossAxisAlignment.center,
-//    children: [
-//      Row(
-//        mainAxisAlignment: MainAxisAlignment.spaceAround,
-//        crossAxisAlignment: CrossAxisAlignment.center,
-//        children: [
-//          Container(
-//            color: Colors.red,
-//            width: 100,
-//            height: 100,
-//          ),
-//          Container(
-//            color: Colors.orange,
-//            width: 100,
-//            height: 100,
-//          ),
-//          Container(
-//            color: Colors.yellow,
-//            width: 100,
-//            height: 100,
-//          ),
-//        ],
-//      ),
-//      Row(...),
-//      Row(...),
-//      Row(...),
-//    ],
-//  ),
-// );
+class Task extends StatelessWidget {
+  const Task({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
