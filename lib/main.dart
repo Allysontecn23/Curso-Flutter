@@ -12,28 +12,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          leading: Container(),
           title: const Text("Tarefas"),
         ),
         body: ListView(
           children: const [
-            Task("Aprender flutter no cafe da manhã"),
-            Task("Andar de bike"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
+            Task("Aprender flutter no cafe da manhã", "https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large"),
+            Task("Andar de bike", "https://tswbike.com/wp-content/uploads/2020/09/108034687_626160478000800_2490880540739582681_n-e1600200953343.jpg"),
+            Task("Ler", "https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg"),
+            Task("jogar", "https://i.ibb.co/tB29PZB/kako-epifania-2022-2-c-pia.jpg"),
+            Task("Meditar", "https://manhattanmentalhealthcounseling.com/wp-content/uploads/2019/06/Top-5-Scientific-Findings-on-MeditationMindfulness-881x710.jpeg"),
           ],
         ),
         floatingActionButton: FloatingActionButton(
@@ -46,7 +34,8 @@ class MyApp extends StatelessWidget {
 
 class Task extends StatefulWidget {
   final String nome;
-  const Task(this.nome, {super.key});
+  final String foto;
+  const Task(this.nome, this.foto, {super.key});
 
   @override
   State<Task> createState() => _TaskState();
@@ -77,6 +66,10 @@ class _TaskState extends State<Task> {
                         color: Colors.black26,
                         height: 100,
                         width: 70,
+                        child: Image.network(
+                          widget.foto,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       Container(
                         width: 200,
@@ -88,14 +81,28 @@ class _TaskState extends State<Task> {
                           ),
                         ),
                       ),
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            nivel++;
-                          });
-                          print(nivel);
-                        },
-                        child: Icon(Icons.arrow_drop_up),
+                      Container(
+                        height: 52,
+                        width: 52,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              nivel++;
+                            });
+                            print(nivel);
+                          },
+                          child: const Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Icon(Icons.arrow_drop_up),
+                              Text(
+                                "UP",
+                                style: TextStyle(fontSize: 12),
+                              )
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -121,7 +128,7 @@ class _TaskState extends State<Task> {
                       ),
                     ),
                   ],
-                ), 
+                ),
               ],
             ),
           ],
