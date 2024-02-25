@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:projeto02/task.dart';
+import 'package:projeto02/components/task.dart';
 
-import 'initial_sceen.dart';
+import 'screens/initial_sceen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
