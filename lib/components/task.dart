@@ -46,7 +46,7 @@ class _TaskState extends State<Task> {
                       width: 70,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(4),
-                        child: Image.network(
+                        child: Image.asset(
                           widget.foto,
                           fit: BoxFit.cover,
                         ),
